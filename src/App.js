@@ -19,7 +19,6 @@ function App() {
   const [workers, setWorkers] = useState([])
 
   const onNewRegisteredWorker = (worker) => {
-    console.log(worker)
     setWorkers([...workers, worker])
   }
   return (
