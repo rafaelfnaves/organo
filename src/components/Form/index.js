@@ -14,6 +14,11 @@ const Form = (props) => {
     const onSave = (event) => {
         event.preventDefault()
         props.onRegisteredWorker({name, role, image, team})
+        // Reset inputs
+        setName('')
+        setRole('')
+        setImage('')
+        setTeam('')
     }
 
     return (

@@ -1,9 +1,13 @@
+import Worker from "../Worker"
 import "./Team.css"
 
 const Team = (props) => {
     return (
-        <section className="team" style={{ backgroundColor: props.secondaryColor }}>
+        props.workers.length > 0 && <section className="team" style={{ backgroundColor: props.secondaryColor }}> {/** Renderização condicional */}
             <h3 style={{ borderColor: props.primaryColor }}>{props.name}</h3>
+            <div className="workers">
+                {props.workers.map(worker => <Worker name={worker.name} role={worker.role} image={worker.image}/>)}
+            </div>
         </section>
     )
 }

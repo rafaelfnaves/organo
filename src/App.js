@@ -26,7 +26,13 @@ function App() {
       <Banner />
       <Form teams={teams.map(team => team.name)} onRegisteredWorker={worker => onNewRegisteredWorker(worker)}/>
 
-      {teams.map(team => <Team key={team.name} name={team.name} primaryColor={team.primaryColor} secondaryColor={team.secondaryColor}/>)}
+      {teams.map(team => <Team 
+        key={team.name} 
+        name={team.name} 
+        primaryColor={team.primaryColor} 
+        secondaryColor={team.secondaryColor}
+        workers={workers.filter(worker => worker.team === team.name)}
+      />)}
     </div>
   );
 }
